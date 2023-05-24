@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "d2a01ac4-46ef-406e-8d13-012a82e02d1d",
+		"name": "PRICES_CONSULT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2700122"
+	},
+	"item": [
+		{
+			"name": "RequestSearchPrice",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:9090/prices/api/v1/searchPrice/1/35455?date=2020-06-14-10.00.00",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"prices",
+						"api",
+						"v1",
+						"searchPrice",
+						"1",
+						"35455"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-06-14-10.00.00"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

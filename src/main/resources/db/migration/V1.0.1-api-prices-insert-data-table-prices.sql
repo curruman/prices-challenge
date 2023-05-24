@@ -1,0 +1,5 @@
+insert into PRICES (price_list_id, brand_id, currency_code, end_date, price, priority, product_id, start_date) values (1,1, 'EUR', '2020-12-31 23.59.59', 35.50, 0, 35455, '2020-06-14 00.00.00');
+insert into PRICES (price_list_id, brand_id, currency_code, end_date, price, priority, product_id, start_date) values (2,1, 'EUR', '2020-06-14 18.30.00', 25.45, 1, 35455, '2020-06-14 15.00.00');
+insert into PRICES (price_list_id, brand_id, currency_code, end_date, price, priority, product_id, start_date) values (3,1, 'EUR', '2020-06-15 11.00.00', 30.50, 1, 35455, '2020-06-15 00.00.00');
+insert into PRICES (price_list_id, brand_id, currency_code, end_date, price, priority, product_id, start_date) values (4,1, 'EUR', '2020-12-31 23.59.59', 38.95, 1, 35455, '2020-06-15 16.00.00');
+insert into PRICES (price_list_id, brand_id, currency_code, end_date, price, priority, product_id, start_date) values (5,1, 'EUR', '2021-12-31 00.20.00', 535.50, 1, 255, '2021-03-10 00.20.00');

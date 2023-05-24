@@ -1,0 +1,52 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.12'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id "org.flywaydb.flyway" version "8.0.0-beta1"
+}
+
+group = 'com.es.'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+	implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.mapstruct:mapstruct-processor:1.0.0.Beta3'
+	compileOnly 'org.mapstruct:mapstruct:1.5.3.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+
+	compileOnly 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+	testImplementation 'com.h2database:h2'
+	testCompileOnly 'org.projectlombok:lombok:1.18.26'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.0'
+	runtimeOnly group: 'org.flywaydb', name: 'flyway-gradle-plugin', version: '8.0.0-beta1'
+	runtimeOnly 'com.h2database:h2'
+}
+
+
+flyway {
+	url = 'jdbc:h2:file:~/prices'
+	user = 'admin'
+	password = 'admin123'
+	schemas = ['prices']
+	placeholders = ['location': 'classpath:db/migration']
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
